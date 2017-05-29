@@ -1,0 +1,3 @@
+'''
+todo initialize Tk automatically
+'''

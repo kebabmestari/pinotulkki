@@ -7,12 +7,12 @@ import os
 
 from datetime import datetime
 
-ROOTDIR = os.path.dirname(os.path.abspath(__file__))
+LOG = logging.getLogger('main')
+LOGFILE = 'logs/log' + str(datetime.now())[0:16]
 
-LOG = logging
-LOGFILE = '../logs/pinotulkki_log' + str(datetime.now())
+LOG.setLevel(logging.DEBUG)
 
-LOG.basicConfig(filename=LOGFILE, level=logging.DEBUG)
+DEBUG = True
 
 
 def logWarning(msg):
@@ -20,10 +20,11 @@ def logWarning(msg):
 
 
 def logDebug(msg):
-    LOG.debug(msg)
+    print(msg)
 
 
 def logInfo(msg):
+    print(msg)
     LOG.info(msg)
 
 
