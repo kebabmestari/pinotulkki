@@ -1,2 +1,2 @@
 # Test file
-1 4 + print read 3 + print
+1 4 + print read + print print

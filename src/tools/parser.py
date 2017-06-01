@@ -1,13 +1,13 @@
-from utils import stack
-from tools import logger
-from numbers import Integral
 from runtime.interpreter import get_instruction_words
+from tools import logger
+from tools import converter
+from common import constants
 
 INSTRUCTIONS = get_instruction_words()
 
 
 # Break down lines into continuous list of tokens
-def break_lines(lines, delimiter=' '):
+def break_lines(lines, delimiter=constants.DEFAULT_DELIMITER):
     result = []
     for line in lines:
         line = str(line)
@@ -20,22 +20,8 @@ def parse_tokens(tokens, instr, data):
         # Token is an instruction, else it's a data value
         if token in INSTRUCTIONS:
             instr.push(token)
-            logger.logDebug('INSTR ' + str(instr.size()) + ': ' + token)
+            logger.log_debug('INSTR ' + str(instr.size()) + ': ' + token)
         else:
-            if token.isdigit():
-                token = int(token)
-                data.push(token)
-                logger.logDebug('DATA ' + str(data.size()) + ' INT: ' + str(token))
-            else:
-                token = str(token)
-                if token == 'true' or token == 'false':
-                    # Boolean value
-                    if token == 'true':
-                        data.push(True)
-                    elif token == 'false':
-                        data.push(False)
-                    logger.logDebug('DATA ' + str(data.size()) + ' BOOL: ' + token)
-                else:
-                    # String value
-                    data.push(token)
-                    logger.logDebug('DATA ' + str(data.size()) + ' STR: ' + token)
+            token = converter.convert_token(token)
+            logger.log_debug('DAT: ' + str(token))
+            data.push(token)

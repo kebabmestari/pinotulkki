@@ -12,23 +12,20 @@
 import os
 import sys
 
+from common.inversestack import InverseStack
 from runtime import interpreter
-
 from tools import logger
 from tools import parser
 from tools import reader
 
-from utils.stack import Stack
-
-DEFAULTFILE = 'test.txt'
-PROGRAMNAME = 'PINOTULKKI'
+DEFAULT_FILE = 'test.txt'
+PROGRAM_NAME = 'PINOTULKKI'
 
 _file_rows = []  # input file lines
 _input_tokens = []  # input tokens
 
-_instr_stack = Stack()  # Instructions stack
-_data_stack = Stack()  # Data stack
-
+_instr_stack = InverseStack()  # Instructions stack
+_data_stack = InverseStack()  # Data stack
 
 # Program entry point
 def main(args):
@@ -40,40 +37,40 @@ def main(args):
     input_file = ''
 
     if len(args) == 0:
-        logger.logWarning('No input file given')
+        logger.log_warning('No input file given')
         print('No input file given, defaulting')
-        input_file = DEFAULTFILE
+        input_file = DEFAULT_FILE
     else:
         input_file = args[0]
 
-    logger.logInfo('%s started' % PROGRAMNAME)
-    logger.logInfo('Input file: ' + input_file)
+    logger.log_info('%s started' % PROGRAM_NAME)
+    logger.log_info('Input file: ' + input_file)
 
     try:
         _file_rows = reader.readfile(os.getcwd(), input_file)
     except FileNotFoundError:
-        logger.logError('File does not exists')
+        logger.log_error('File does not exists')
         return
     except IOError:
-        logger.logError('IO error while reading input file')
+        logger.log_error('IO error while reading input file')
         return
 
-    logger.logInfo('File read')
-    logger.logInfo('Parsing tokens')
+    logger.log_info('File read')
+    logger.log_info('Parsing tokens')
 
     # Break file into singular tokens
     _input_tokens = parser.break_lines(_file_rows)
 
-    logger.logInfo('Tokens parsed, count: ' + str(len(_input_tokens)))
-    logger.logInfo('Classifying and filling stacks')
+    logger.log_info('Tokens parsed, count: ' + str(len(_input_tokens)))
+    logger.log_info('Classifying and filling stacks')
 
     # Parse tokens into stacks
     parser.parse_tokens(_input_tokens, _instr_stack, _data_stack)
-    logger.logInfo('Tokens parsed')
-    logger.logInfo('Instructions: ' + str(_instr_stack.size()))
-    logger.logInfo('Data values: ' + str(_data_stack.size()))
+    logger.log_info('Tokens parsed')
+    logger.log_info('Instructions: ' + str(_instr_stack.size()))
+    logger.log_info('Data values: ' + str(_data_stack.size()))
 
-    logger.logInfo('Starting interpreting...\n\n')
+    logger.log_info('Starting interpreting...')
 
     # Flag identifies successful run
     _success = True
@@ -84,14 +81,16 @@ def main(args):
         if interpreter.handle_command(instr, _data_stack):
             continue
         else:
-            logger.logError('Conflicting instruction: ' + instr)
-            logger.logError('Stopping interpreter')
+            logger.log_error('Conflicting instruction: ' + instr)
+            logger.log_error('Stopping interpreter')
             _success = False
             break
 
     if _success:
-        logger.logInfo('OK')
+        logger.log_info('OK')
 
 
 if __name__ == '__main__':
     main(sys.argv[1:])
+
+logger.end_logging()
