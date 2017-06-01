@@ -1,6 +1,5 @@
 '''
-    Class implements stack
-    Small abstraction over list
+    Class implements inverse stack
 '''
 
 
@@ -18,6 +17,9 @@ class InverseStack:
         else:
             self.items.insert(0, item)
 
+    def peek(self):
+        return self.items[0]
+
     def pop(self):
         if self.size() == 0:
             return None
@@ -31,3 +33,10 @@ class InverseStack:
 
     def __str__(self):
         return str(self.items)
+
+    def replace_placeholder(self, symbol, value):
+        for i in range(len(self.items)):
+            if self.items[i] == symbol:
+                self.items[i] = value;
+                return True
+        return False

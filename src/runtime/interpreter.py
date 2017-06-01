@@ -5,6 +5,8 @@ from inspect import signature
 from tools import logger
 from tools import converter
 
+from common import constants
+
 # Modules
 from modules import io
 from modules import stack
@@ -92,9 +94,14 @@ def handle_command(cmd, data):
             logger.log_error('Invalid types of arguments')
             return False
 
-        if result is not None:
+        if cmd in constants.PLACEHOLDER_FUNCTIONS:
             if isinstance(result, str):
                 result = converter.convert_token(result)  # convert user inputted string
+            # Replace next placeholder with returned value
+            if not data.replace_placeholder(constants.PLACEHOLDER_SYMBOL, result):
+                logger.log_error('No expected placeholder value')
+                return False
+        elif result is not None:
             data.push_front(result)  # push the result into the top of the data stack
             logger.log_debug('Pushed result ' + str(result))
         else:

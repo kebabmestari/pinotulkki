@@ -17,8 +17,13 @@ def break_lines(lines, delimiter=constants.DEFAULT_DELIMITER):
 
 def parse_tokens(tokens, instr, data):
     for token in tokens:
+
         # Token is an instruction, else it's a data value
         if token in INSTRUCTIONS:
+            if token in constants.PLACEHOLDER_FUNCTIONS:
+                # Token is an instruction that needs a placeholder value in stack
+                data.push(constants.PLACEHOLDER_SYMBOL)
+                logger.log_debug('DAT: PLACEHOLDER ' + constants.COMMENT_SYMBOL)
             instr.push(token)
             logger.log_debug('INSTR ' + str(instr.size()) + ': ' + token)
         else:

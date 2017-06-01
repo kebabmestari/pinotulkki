@@ -1,2 +1,4 @@
 # Test file
-1 4 + print read + print print
+read read == not not false or
+
+print
