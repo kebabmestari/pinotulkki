@@ -1,11 +1,15 @@
 DEFAULT_DELIMITER = ' '
 COMMENT_SYMBOL = '#'
-NO_POP_FUNCTIONS = ['print']
+NO_POP_FUNCTIONS = ['.']
 PLACEHOLDER_FUNCTIONS = ['read']
 PLACEHOLDER_SYMBOL = '$'
 IF_BLOCK_SYMBOLS = ('{', '}')
-IF_BLOCK_PLACEHOLDER = '@'
 LOOP_BLOCK_SYMBOLS = ('(', ')')
-LOOP_BLOCK_PLACEHOLDER = '&'
+
+
+class BlockType:
+    IF = 1
+    LOOP = 2
+    GLOBAL = 3
 
 DEBUG = True

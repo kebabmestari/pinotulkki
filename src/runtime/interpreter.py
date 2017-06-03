@@ -1,19 +1,17 @@
 # Dictionary that maps language's commands to handler functions
-
 from inspect import signature
 
-from tools import logger
-from tools import converter
-
 from common import constants
-
-# Modules
-from modules import io
-from modules import stack
 from modules import arithmetic
 from modules import comparison
-from modules import logic
 from modules import graphics
+# Modules
+from modules import io
+from modules import logic
+from modules import stack
+from runtime import scopeservice
+from tools import converter
+from tools import logger
 
 
 # test handler pls ignore
@@ -43,15 +41,15 @@ CMD = {
 
     # STACK
     'dup': stack.dup_handler,
-    'rot': foo,
+    'rot': stack.rot_handler,
     'swap': stack.swap_handler,
-    'drop': foo,
-    'over': foo,
-    'nip': foo,
-    'tuck': foo,
+    'drop': stack.drop_handler,
+    'over': stack.over_handler,
+    'nip': stack.nip_handler,
+    'tuck': stack.tuck_handler,
 
     # IO
-    'print': io.print_handler,
+    '.': io.print_handler,
     'read': io.read_handler,
 
     # GRAPHICS
@@ -72,6 +70,64 @@ def get_instruction_words():
 # Return handler function
 def get_instruction_handler(cmd):
     return CMD[cmd]
+
+
+def interpret_program(scope, scope_type):
+    # Fetch the stacks and make copies of them
+    instr_stack = scopeservice.copy_instr_stack(scope['id'])
+    data_stack = scopeservice.copy_data_stack(scope['id'])
+
+    ibs = constants.IF_BLOCK_SYMBOLS
+    lbs = constants.LOOP_BLOCK_SYMBOLS
+
+    # Go through every instruction in stack and pass it to the interpreter
+    while instr_stack.size() > 0:
+        instr = instr_stack.pop()
+
+        # Handle control instructions
+        if instr[0] == ibs[0]:  # if block
+            logger.log_debug('Interpreting control instruction IF')
+            if not data_stack.pop():  # do not proceed into scope if previous value is False
+                logger.log_debug('Evaluated False, not proceeding to block')
+                continue
+            ref = parse_scope_symbol_ref(instr)
+            scope_type = constants.BlockType.IF
+            newscope = scopeservice.get_scope(ref)
+            logger.log_debug('Evaluated True, proceeding to block ' + newscope['name'] + ' ' + str(newscope['id']))
+            if not interpret_program(newscope, scope_type):
+                return False
+            continue
+
+        # Handle control instructions
+        if instr[0] == lbs[0]:  # loop block
+            ref = parse_scope_symbol_ref(instr)
+            scope_type = constants.BlockType.LOOP
+            newscope = scopeservice.get_scope(ref)
+            while interpret_program(newscope, scope_type):
+                logger.log_debug('Looping block ' + newscope['name'] + ' ' + str(newscope['id']))
+                pass
+            continue
+
+        if handle_command(instr, data_stack):
+            continue
+        else:
+            logger.log_error('Conflicting instruction: ' + instr)
+            logger.log_error('Stopping interpreter')
+            return False
+
+    if scope_type == constants.BlockType.LOOP:
+        loop_condition = data_stack.pop()
+        if not loop_condition:
+            logger.log_debug('Exiting loop block ' + scope['name'] + ' ' + str(scope['id']))
+        return bool(loop_condition)
+
+    logger.log_debug('Leaving scope ' + scope['name'] + ' ' + str(scope['id']))
+
+    return True
+
+
+def parse_scope_symbol_ref(token):
+    return int(token[1:])
 
 
 # Call a corresponding function from the dictionary
@@ -105,8 +161,7 @@ def handle_command(cmd, data):
         if cmd in constants.PLACEHOLDER_FUNCTIONS:
             if isinstance(result, str):
                 result = converter.convert_token(result)  # convert user inputted string
-            # Replace next placeholder with re
-            # turned value
+            # Replace next placeholder with returned value
             if not data.replace_placeholder(constants.PLACEHOLDER_SYMBOL, result):
                 logger.log_error('No expected placeholder value')
                 return False

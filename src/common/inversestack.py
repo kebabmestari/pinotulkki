@@ -2,17 +2,11 @@
     Class implements inverse stack
     Global stack is always id 0
 '''
-from tools import logger
+
 
 class InverseStack:
-    def __init__(self, id, name=''):
+    def __init__(self):
         self.items = []
-        self.id = id
-        self.name = name
-        if name == '':
-            logger.log_debug('Stack id ' + str(id) + ' created')
-        else:
-            logger.log_debug('Stack ' + self.name + ' id ' + str(id) + ' created')
 
     def push(self, item):
         self.items.append(item)
@@ -40,9 +34,6 @@ class InverseStack:
 
     def __str__(self):
         return str(self.items)
-
-    def get_id(self):
-        return self.id
 
     def replace_placeholder(self, symbol, value):
         for i in range(len(self.items)):

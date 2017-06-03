@@ -1,2 +1,2 @@
 # Test file
-gfxinit blue color 50 50 100 100 line violet color 150 300 100 circle yellow color 500 200 300 box
+1 2 3 tuck .

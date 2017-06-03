@@ -12,8 +12,9 @@
 import os
 import sys
 
+from common import constants
 from runtime import interpreter
-from runtime import stackservice
+from runtime import scopeservice
 from tools import logger
 from tools import parser
 from tools import reader
@@ -24,8 +25,9 @@ PROGRAM_NAME = 'PINOTULKKI'
 _file_rows = []  # input file lines
 _input_tokens = []  # input tokens
 
-_instr_stack = stackservice.create_stack('global_instr_stack')  # Instructions stack
-_data_stack = stackservice.create_stack('global_data_stack')  # Data stack
+_global_scope = scopeservice.create_scope('global scope', -1)
+_instr_stack = scopeservice.get_instr_stack(_global_scope['id'])  # Instructions stack
+_data_stack = scopeservice.get_data_stack(_global_scope['id'])  # Data stack
 
 
 # Program entry point
@@ -65,26 +67,17 @@ def main(args):
     logger.log_info('Classifying and filling stacks')
 
     # Parse tokens into stacks
-    parser.parse_tokens(_input_tokens, _instr_stack, _data_stack)
+    if not parser.parse_tokens(_input_tokens, _global_scope):
+        logger.log_info('Stopping process')
+        quit(1)
     logger.log_info('Tokens parsed')
     logger.log_info('Instructions: ' + str(_instr_stack.size()))
     logger.log_info('Data values: ' + str(_data_stack.size()))
 
     logger.log_info('Starting interpreting...')
 
-    # Flag identifies successful run
-    _success = True
-
-    # Go through every instruction in stack and pass it to the interpreter
-    while _instr_stack.size() > 0:
-        instr = _instr_stack.pop()
-        if interpreter.handle_command(instr, _data_stack):
-            continue
-        else:
-            logger.log_error('Conflicting instruction: ' + instr)
-            logger.log_error('Stopping interpreter')
-            _success = False
-            break
+    # Interpret program
+    _success = interpreter.interpret_program(_global_scope, constants.BlockType.GLOBAL)
 
     if _success:
         logger.log_info('OK')
