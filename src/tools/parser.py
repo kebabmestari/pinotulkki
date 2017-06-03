@@ -16,6 +16,9 @@ def break_lines(lines, delimiter=constants.DEFAULT_DELIMITER):
 
 
 def parse_tokens(tokens, instr, data):
+
+    target = data
+
     for token in tokens:
 
         # Token is an instruction, else it's a data value

@@ -3,25 +3,25 @@
 '''
 
 import logging
-from imp import reload
-reload(logging)
 import os
 
 from datetime import datetime
+from common import constants
 
-LOGDIR = 'logs'
-ROOTPATH = ''
+LOG_DIR = 'logs'
+ROOT_PATH = ''
 
-if os.path.exists(LOGDIR) and os.path.isdir(LOGDIR):
-    ROOTPATH = LOGDIR + '/'
-LOGFILE = ROOTPATH + 'log' + str(datetime.now())[0:16]
+if os.path.exists(LOG_DIR) and os.path.isdir(LOG_DIR):
+    ROOT_PATH = LOG_DIR + '/'
+LOGFILE = ROOT_PATH + 'log' + str(datetime.now())[0:16].replace(' ', '')
 
 LOG = logging.getLogger()  # root logger
 
 fileHandler = logging.FileHandler(LOGFILE)
 consoleHandler = logging.StreamHandler()
 
-LOG.addHandler(fileHandler)
+if constants.DEBUG:
+    LOG.addHandler(fileHandler)
 LOG.addHandler(consoleHandler)
 
 LOG.setLevel(logging.DEBUG)
@@ -35,6 +35,10 @@ def log_debug(msg):
     LOG.debug('DEBUG: ' + msg)
 
 
+def log_graphics(msg):
+    LOG.debug('GFX: ' + msg)
+
+
 def log_info(msg):
     LOG.info('INFO: ' + msg)
 
@@ -45,6 +49,10 @@ def log_error(msg):
 
 def log_result(value):
     LOG.info('RESULT: ' + str(value))
+
+
+def log_print(value):
+    LOG.info('PRINT: ' + str(value))
 
 
 def end_logging():

@@ -53,6 +53,14 @@ CMD = {
     # IO
     'print': io.print_handler,
     'read': io.read_handler,
+
+    # GRAPHICS
+    'gfxinit': graphics.init_handler,
+    'circle': graphics.circle_handler,
+    'box': graphics.box_handler,
+    'line': graphics.line_handler,
+    'color': graphics.color_handler,
+
 }
 
 
@@ -97,15 +105,16 @@ def handle_command(cmd, data):
         if cmd in constants.PLACEHOLDER_FUNCTIONS:
             if isinstance(result, str):
                 result = converter.convert_token(result)  # convert user inputted string
-            # Replace next placeholder with returned value
+            # Replace next placeholder with re
+            # turned value
             if not data.replace_placeholder(constants.PLACEHOLDER_SYMBOL, result):
                 logger.log_error('No expected placeholder value')
                 return False
         elif result is not None:
             data.push_front(result)  # push the result into the top of the data stack
             logger.log_debug('Pushed result ' + str(result))
-        else:
-            # Call did not return a value to stack -> return to stack
+        elif cmd in constants.NO_POP_FUNCTIONS:
+            # Handler should not remove the data from stack -> return to stack
             # For example, print function should not remove values from stack
             data.push_front(params)
     else:

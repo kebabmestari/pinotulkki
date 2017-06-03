@@ -12,8 +12,8 @@
 import os
 import sys
 
-from common.inversestack import InverseStack
 from runtime import interpreter
+from runtime import stackservice
 from tools import logger
 from tools import parser
 from tools import reader
@@ -24,8 +24,9 @@ PROGRAM_NAME = 'PINOTULKKI'
 _file_rows = []  # input file lines
 _input_tokens = []  # input tokens
 
-_instr_stack = InverseStack()  # Instructions stack
-_data_stack = InverseStack()  # Data stack
+_instr_stack = stackservice.create_stack('global_instr_stack')  # Instructions stack
+_data_stack = stackservice.create_stack('global_data_stack')  # Data stack
+
 
 # Program entry point
 def main(args):
@@ -37,8 +38,7 @@ def main(args):
     input_file = ''
 
     if len(args) == 0:
-        logger.log_warning('No input file given')
-        print('No input file given, defaulting')
+        logger.log_info('No input file given, defaulting')
         input_file = DEFAULT_FILE
     else:
         input_file = args[0]

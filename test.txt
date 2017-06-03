@@ -1,4 +1,2 @@
 # Test file
-read read == not not false or
-
-print
+gfxinit blue color 50 50 100 100 line violet color 150 300 100 circle yellow color 500 200 300 box
