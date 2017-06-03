@@ -1,2 +1,92 @@
-# Test file
-1 2 3 tuck .
+gfxinit
+
+# Kysymys
+Anna_lukuarvo_valilta_1-200 . drop
+read
+
+# Laske vahan helpompi arvo
+dup
+100
+rot-
+/
+SKAALA2
+rot- rot- swap
+push
+SKAALA push
+
+0 POSITION push
+
+# Paasilmukka
+(
+
+# Laske siirto per kirjain, skaala huomioituna
+SKAALA pull
+1 *
+swap
+POSITION pull
++
+POSITION push
+
+# Kysy kirjainta
+Anna_kirjain_tai_lopeta . drop
+read
+
+tuck
+
+A ==
+{
+POSITION pull 50 + swap SKAALA2 pull * x0 push
+0 swap SKAALA2 pull * y0 push
+POSITION pull 0 + swap SKAALA2 pull * x1 push
+50 swap SKAALA2 pull * y1 push
+x0 pull roll4-
+y0 pull roll4-
+x1 pull roll4-
+y1 pull roll4-
+line
+
+POSITION pull 50 + swap SKAALA2 pull * x0 push
+0 swap SKAALA2 pull * y0 push
+POSITION pull 100 + swap SKAALA2 pull * x1 push
+50 swap SKAALA2 pull * y1 push
+x0 pull roll4-
+y0 pull roll4-
+x1 pull roll4-
+y1 pull roll4-
+line
+
+POSITION pull 0 + swap SKAALA2 pull * x0 push
+25 swap SKAALA2 pull * y0 push
+POSITION pull 100 + swap SKAALA2 pull * x1 push
+25 swap SKAALA2 pull * y1 push
+x0 pull roll4-
+y0 pull roll4-
+x1 pull roll4-
+y1 pull roll4-
+line
+
+}
+
+tuck
+
+O ==
+{
+}
+tuck
+
+K ==
+{
+Kolmas .
+}
+
+tuck
+P ==
+{
+Neljas .
+}
+
+# Check for ending character
+Q !=
+)
+
+LOPETIT OHJELMAN .

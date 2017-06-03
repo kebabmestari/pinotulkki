@@ -44,10 +44,10 @@ class GFX_Window(threading.Thread):
         self.C.create_line(x0, y0, x1, y1, fill=self.color)
 
     def draw_circle(self, x, y, r):
-        self.C.create_oval(x-r, y-r, x+r, y+r, fill=self.color)
+        self.C.create_oval(x, y, x+r, y+r, outline=self.color)
 
     def draw_rect(self, x0, y0, x1, y1):
-        self.C.create_rectangle(x0, y0, x1, y1, fill=self.color)
+        self.C.create_rectangle(x0, y0, x1, y1, outline=self.color)
 
     def set_color(self, color):
         self.color = color
@@ -68,6 +68,12 @@ def circle_handler(x, y, r):
 def box_handler(x0, y0, sl):
     (x0, y0, sl) = convert_arguments(x0, y0, sl)
     _gfx.push_event(_gfx.draw_rect, x0, y0, x0+sl, y0+sl)
+
+def triangle_handler(x0, y0, sl):
+    (x0, y0, sl) = convert_arguments(x0, y0, sl)
+    _gfx.push_event(_gfx.draw_line, x0+sl/2, y0, x0, y0+sl)
+    _gfx.push_event(_gfx.draw_line, x0+sl/2, y0, x0+sl, y0+sl)
+    _gfx.push_event(_gfx.draw_line, x0, y0+sl, x0+sl, y0+sl)
 
 def color_handler(color):
     _gfx.push_event(_gfx.set_color, color)

@@ -22,6 +22,24 @@ def rot_handler(a, b, c):
     return [b, a, c]
 
 
+# rot-
+# rotates the first item to third
+def rot_minus_handler(a, b, c):
+    return [a, c, b]
+
+
+# roll
+# rotates the n-th item to the top
+def roll4_handler(a, b, c, d):
+    return [a, c, b, d]
+
+
+# roll
+# rotates the top item into n-th position
+def roll4_minus_handler(a, b, c, d):
+    return [a, d, c, b]
+
+
 # over
 # pushes copy of the second item to the top
 def over_handler(a, b):

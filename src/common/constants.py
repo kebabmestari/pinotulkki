@@ -5,6 +5,7 @@ PLACEHOLDER_FUNCTIONS = ['read']
 PLACEHOLDER_SYMBOL = '$'
 IF_BLOCK_SYMBOLS = ('{', '}')
 LOOP_BLOCK_SYMBOLS = ('(', ')')
+STRING_WHITESPACE = '_'
 
 
 class BlockType:

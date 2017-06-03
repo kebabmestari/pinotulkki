@@ -2,7 +2,7 @@
 from inspect import signature
 
 from common import constants
-from modules import arithmetic
+from modules import arithmetic, stash
 from modules import comparison
 from modules import graphics
 # Modules
@@ -42,6 +42,9 @@ CMD = {
     # STACK
     'dup': stack.dup_handler,
     'rot': stack.rot_handler,
+    'rot-': stack.rot_minus_handler,
+    'roll4': stack.roll4_handler,
+    'roll4-': stack.roll4_minus_handler,
     'swap': stack.swap_handler,
     'drop': stack.drop_handler,
     'over': stack.over_handler,
@@ -57,7 +60,12 @@ CMD = {
     'circle': graphics.circle_handler,
     'box': graphics.box_handler,
     'line': graphics.line_handler,
+    'triangle': graphics.triangle_handler,
     'color': graphics.color_handler,
+
+    # STASH
+    'push': stash.push_stash_handler,
+    'pull': stash.pull_stash_handler,
 
 }
 
@@ -103,6 +111,7 @@ def interpret_program(scope, scope_type):
             ref = parse_scope_symbol_ref(instr)
             scope_type = constants.BlockType.LOOP
             newscope = scopeservice.get_scope(ref)
+            logger.log_debug('Entering loop block ' + newscope['name'] + ' ' + str(newscope['id']))
             while interpret_program(newscope, scope_type):
                 logger.log_debug('Looping block ' + newscope['name'] + ' ' + str(newscope['id']))
                 pass
