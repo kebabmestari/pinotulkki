@@ -13,6 +13,7 @@ import os
 import sys
 
 from common import constants
+from modules import graphics
 from runtime import interpreter
 from runtime import scopeservice
 from tools import logger
@@ -86,4 +87,5 @@ def main(args):
 if __name__ == '__main__':
     main(sys.argv[1:])
 
+graphics.close_gfx()
 logger.end_logging()

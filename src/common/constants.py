@@ -14,4 +14,4 @@ class BlockType:
     GLOBAL = 3
 
 
-DEBUG = True
+DEBUG = False

@@ -13,18 +13,21 @@ ROOT_PATH = ''
 
 if os.path.exists(LOG_DIR) and os.path.isdir(LOG_DIR):
     ROOT_PATH = LOG_DIR + '/'
-LOGFILE = ROOT_PATH + 'log' + str(datetime.now())[0:16].replace(' ', '')
+LOGFILE = ROOT_PATH + 'log' + str(datetime.now())[0:16].replace(' ', '-').replace(':', '-')
 
 LOG = logging.getLogger()  # root logger
 
 fileHandler = logging.FileHandler(LOGFILE)
 consoleHandler = logging.StreamHandler()
 
-if constants.DEBUG:
-    LOG.addHandler(fileHandler)
-LOG.addHandler(consoleHandler)
+LOG.addHandler(fileHandler)
 
 LOG.setLevel(logging.DEBUG)
+
+# If debugging is on, log everything to console too
+# If not, debug log goes only into file
+if constants.DEBUG:
+    LOG.addHandler(consoleHandler)
 
 
 def log_warning(msg):
@@ -50,11 +53,11 @@ def log_error(msg):
 
 def log_result(value):
     LOG.debug('RESULT: ' + str(value))
-    print('PRINT: ' + str(value))
 
 
 def log_print(value):
     LOG.info('PRINT: ' + str(value))
+    print('PRINT: ' + str(value))
 
 
 def end_logging():

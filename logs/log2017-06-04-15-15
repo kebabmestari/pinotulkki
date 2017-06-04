@@ -1,0 +1,1523 @@
+DEBUG: Logger initialized
+DEBUG: Scope global scope ID 0 created
+INFO: PINOTULKKI started
+INFO: Input file: laskuja.txt
+INFO: File read
+INFO: Parsing tokens
+INFO: Tokens parsed, count: 42
+INFO: Classifying and filling stacks
+DEBUG: DAT: Lasketaan_1+5_ja_tulostetaan
+DEBUG: INSTR 1: .
+DEBUG: INSTR 2: drop
+DEBUG: DAT: 1
+DEBUG: INSTR 3: +
+DEBUG: DAT: 5
+DEBUG: INSTR 4: .
+DEBUG: INSTR 5: drop
+DEBUG: DAT: Lasketaan_10*2_ja_tulostetaan
+DEBUG: INSTR 6: .
+DEBUG: INSTR 7: drop
+DEBUG: DAT: 10
+DEBUG: INSTR 8: *
+DEBUG: DAT: 2
+DEBUG: INSTR 9: .
+DEBUG: INSTR 10: drop
+DEBUG: DAT: Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan
+DEBUG: INSTR 11: .
+DEBUG: INSTR 12: drop
+DEBUG: DAT: 100
+DEBUG: DAT: 10
+DEBUG: INSTR 13: /
+DEBUG: DAT: 5
+DEBUG: DAT: 9
+DEBUG: INSTR 14: rot-
+DEBUG: INSTR 15: *
+DEBUG: INSTR 16: +
+DEBUG: INSTR 17: .
+DEBUG: INSTR 18: drop
+DEBUG: DAT: Anna_luku:
+DEBUG: INSTR 19: .
+DEBUG: INSTR 20: drop
+DEBUG: DAT: PLACEHOLDER #
+DEBUG: INSTR 21: read
+DEBUG: INSTR 22: >
+DEBUG: DAT: 10
+DEBUG: Scope if_scope ID 1 created
+DEBUG: SCOPEOPEN: 1
+DEBUG: DAT: Luku_on_suurempi_kuin_kymmenen
+DEBUG: INSTR 1: .
+DEBUG: SCOPECLOSE: 1
+DEBUG: DAT: Loppu
+DEBUG: INSTR 24: .
+DEBUG: INSTR 25: drop
+INFO: Tokens parsed
+INFO: Instructions: 25
+INFO: Data values: 15
+INFO: Starting interpreting...
+DEBUG: STACK: ['Lasketaan_1+5_ja_tulostetaan', '1', '5', 'Lasketaan_10*2_ja_tulostetaan', '10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: . with arguments ['Lasketaan_1+5_ja_tulostetaan']
+PRINT: Lasketaan 1+5 ja tulostetaan
+DEBUG: STACK: ['Lasketaan_1+5_ja_tulostetaan', '1', '5', 'Lasketaan_10*2_ja_tulostetaan', '10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: drop with arguments ['Lasketaan_1+5_ja_tulostetaan']
+DEBUG: STACK: ['1', '5', 'Lasketaan_10*2_ja_tulostetaan', '10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: + with arguments ['1', '5']
+DEBUG: Pushed result 6
+DEBUG: STACK: [6, 'Lasketaan_10*2_ja_tulostetaan', '10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: . with arguments [6]
+PRINT: 6
+DEBUG: STACK: [6, 'Lasketaan_10*2_ja_tulostetaan', '10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: drop with arguments [6]
+DEBUG: STACK: ['Lasketaan_10*2_ja_tulostetaan', '10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: . with arguments ['Lasketaan_10*2_ja_tulostetaan']
+PRINT: Lasketaan 10*2 ja tulostetaan
+DEBUG: STACK: ['Lasketaan_10*2_ja_tulostetaan', '10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: drop with arguments ['Lasketaan_10*2_ja_tulostetaan']
+DEBUG: STACK: ['10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: * with arguments ['10', '2']
+DEBUG: Pushed result 20
+DEBUG: STACK: [20, 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: . with arguments [20]
+PRINT: 20
+DEBUG: STACK: [20, 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: drop with arguments [20]
+DEBUG: STACK: ['Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: . with arguments ['Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan']
+PRINT: Lasketaan (100 / 10) + 5 * 9 ja tulostetaan
+DEBUG: STACK: ['Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: drop with arguments ['Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan']
+DEBUG: STACK: ['100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: / with arguments ['100', '10']
+DEBUG: Pushed result 10
+DEBUG: STACK: [10, '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: rot- with arguments [10, '5', '9']
+DEBUG: Pushed result [10, '9', '5']
+DEBUG: STACK: ['5', '9', 10, 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: * with arguments ['5', '9']
+DEBUG: Pushed result 45
+DEBUG: STACK: [45, 10, 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: + with arguments [45, 10]
+DEBUG: Pushed result 55
+DEBUG: STACK: [55, 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: . with arguments [55]
+PRINT: 55
+DEBUG: STACK: [55, 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: drop with arguments [55]
+DEBUG: STACK: ['Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: . with arguments ['Anna_luku:']
+PRINT: Anna luku:
+DEBUG: STACK: ['Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: drop with arguments ['Anna_luku:']
+DEBUG: STACK: ['$', '10', 'Loppu']
+DEBUG: Interpreting instruction: read with arguments []
+DEBUG: Logger initialized
+DEBUG: Scope global scope ID 0 created
+INFO: PINOTULKKI started
+INFO: Input file: laskuja.txt
+INFO: File read
+INFO: Parsing tokens
+INFO: Tokens parsed, count: 42
+INFO: Classifying and filling stacks
+DEBUG: DAT: Lasketaan_1+5_ja_tulostetaan
+DEBUG: INSTR 1: .
+DEBUG: INSTR 2: drop
+DEBUG: DAT: 1
+DEBUG: INSTR 3: +
+DEBUG: DAT: 5
+DEBUG: INSTR 4: .
+DEBUG: INSTR 5: drop
+DEBUG: DAT: Lasketaan_10*2_ja_tulostetaan
+DEBUG: INSTR 6: .
+DEBUG: INSTR 7: drop
+DEBUG: DAT: 10
+DEBUG: INSTR 8: *
+DEBUG: DAT: 2
+DEBUG: INSTR 9: .
+DEBUG: INSTR 10: drop
+DEBUG: DAT: Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan
+DEBUG: INSTR 11: .
+DEBUG: INSTR 12: drop
+DEBUG: DAT: 100
+DEBUG: DAT: 10
+DEBUG: INSTR 13: /
+DEBUG: DAT: 5
+DEBUG: DAT: 9
+DEBUG: INSTR 14: rot-
+DEBUG: INSTR 15: *
+DEBUG: INSTR 16: +
+DEBUG: INSTR 17: .
+DEBUG: INSTR 18: drop
+DEBUG: DAT: Anna_luku:
+DEBUG: INSTR 19: .
+DEBUG: INSTR 20: drop
+DEBUG: DAT: PLACEHOLDER #
+DEBUG: INSTR 21: read
+DEBUG: INSTR 22: >
+DEBUG: DAT: 10
+DEBUG: Scope if_scope ID 1 created
+DEBUG: SCOPEOPEN: 1
+DEBUG: DAT: Luku_on_suurempi_kuin_kymmenen
+DEBUG: INSTR 1: .
+DEBUG: SCOPECLOSE: 1
+DEBUG: DAT: Loppu
+DEBUG: INSTR 24: .
+DEBUG: INSTR 25: drop
+INFO: Tokens parsed
+INFO: Instructions: 25
+INFO: Data values: 15
+INFO: Starting interpreting...
+DEBUG: STACK: ['Lasketaan_1+5_ja_tulostetaan', '1', '5', 'Lasketaan_10*2_ja_tulostetaan', '10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: . with arguments ['Lasketaan_1+5_ja_tulostetaan']
+PRINT: Lasketaan 1+5 ja tulostetaan
+DEBUG: STACK: ['Lasketaan_1+5_ja_tulostetaan', '1', '5', 'Lasketaan_10*2_ja_tulostetaan', '10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: drop with arguments ['Lasketaan_1+5_ja_tulostetaan']
+DEBUG: STACK: ['1', '5', 'Lasketaan_10*2_ja_tulostetaan', '10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: + with arguments ['1', '5']
+DEBUG: Pushed result 6
+DEBUG: STACK: [6, 'Lasketaan_10*2_ja_tulostetaan', '10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: . with arguments [6]
+PRINT: 6
+DEBUG: STACK: [6, 'Lasketaan_10*2_ja_tulostetaan', '10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: drop with arguments [6]
+DEBUG: STACK: ['Lasketaan_10*2_ja_tulostetaan', '10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: . with arguments ['Lasketaan_10*2_ja_tulostetaan']
+PRINT: Lasketaan 10*2 ja tulostetaan
+DEBUG: STACK: ['Lasketaan_10*2_ja_tulostetaan', '10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: drop with arguments ['Lasketaan_10*2_ja_tulostetaan']
+DEBUG: STACK: ['10', '2', 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: * with arguments ['10', '2']
+DEBUG: Pushed result 20
+DEBUG: STACK: [20, 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: . with arguments [20]
+PRINT: 20
+DEBUG: STACK: [20, 'Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: drop with arguments [20]
+DEBUG: STACK: ['Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: . with arguments ['Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan']
+PRINT: Lasketaan (100 / 10) + 5 * 9 ja tulostetaan
+DEBUG: STACK: ['Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan', '100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: drop with arguments ['Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan']
+DEBUG: STACK: ['100', '10', '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: / with arguments ['100', '10']
+DEBUG: Pushed result 10
+DEBUG: STACK: [10, '5', '9', 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: rot- with arguments [10, '5', '9']
+DEBUG: Pushed result [10, '9', '5']
+DEBUG: STACK: ['5', '9', 10, 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: * with arguments ['5', '9']
+DEBUG: Pushed result 45
+DEBUG: STACK: [45, 10, 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: + with arguments [45, 10]
+DEBUG: Pushed result 55
+DEBUG: STACK: [55, 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: . with arguments [55]
+PRINT: 55
+DEBUG: STACK: [55, 'Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: drop with arguments [55]
+DEBUG: STACK: ['Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: . with arguments ['Anna_luku:']
+PRINT: Anna luku:
+DEBUG: STACK: ['Anna_luku:', '$', '10', 'Loppu']
+DEBUG: Interpreting instruction: drop with arguments ['Anna_luku:']
+DEBUG: STACK: ['$', '10', 'Loppu']
+DEBUG: Interpreting instruction: read with arguments []
+DEBUG: STACK: ['200', '10', 'Loppu']
+DEBUG: Interpreting instruction: > with arguments ['200', '10']
+DEBUG: Pushed result True
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated True, proceeding to block if_scope 1
+DEBUG: STACK: ['Luku_on_suurempi_kuin_kymmenen']
+DEBUG: Interpreting instruction: . with arguments ['Luku_on_suurempi_kuin_kymmenen']
+PRINT: Luku on suurempi kuin kymmenen
+DEBUG: Leaving scope if_scope 1
+DEBUG: STACK: ['Loppu']
+DEBUG: Interpreting instruction: . with arguments ['Loppu']
+PRINT: Loppu
+DEBUG: STACK: ['Loppu']
+DEBUG: Interpreting instruction: drop with arguments ['Loppu']
+DEBUG: Leaving scope global scope 0
+INFO: OK
+DEBUG: Shutting down logger
+DEBUG: Logger initialized
+DEBUG: Scope global scope ID 0 created
+INFO: PINOTULKKI started
+INFO: Input file: demo.txt
+INFO: File read
+INFO: Parsing tokens
+INFO: Tokens parsed, count: 483
+INFO: Classifying and filling stacks
+DEBUG: INSTR 1: gfxinit
+DEBUG: DAT: Anna_lukuarvo_valilta_1-200
+DEBUG: INSTR 2: .
+DEBUG: INSTR 3: drop
+DEBUG: DAT: PLACEHOLDER #
+DEBUG: INSTR 4: read
+DEBUG: INSTR 5: dup
+DEBUG: DAT: 100
+DEBUG: INSTR 6: rot-
+DEBUG: INSTR 7: /
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 8: rot-
+DEBUG: INSTR 9: rot-
+DEBUG: INSTR 10: swap
+DEBUG: INSTR 11: push
+DEBUG: DAT: SKAALA
+DEBUG: INSTR 12: push
+DEBUG: DAT: -50
+DEBUG: DAT: POSITION
+DEBUG: INSTR 13: push
+DEBUG: Scope loop_scope ID 1 created
+DEBUG: SCOPEOPEN: 1
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 1: pull
+DEBUG: DAT: 50
+DEBUG: INSTR 2: *
+DEBUG: DAT: 5
+DEBUG: INSTR 3: +
+DEBUG: INSTR 4: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 5: pull
+DEBUG: INSTR 6: +
+DEBUG: DAT: POSITION
+DEBUG: INSTR 7: push
+DEBUG: DAT: Anna_kirjain_tai_lopeta
+DEBUG: INSTR 8: .
+DEBUG: INSTR 9: drop
+DEBUG: DAT: PLACEHOLDER #
+DEBUG: INSTR 10: read
+DEBUG: INSTR 11: tuck
+DEBUG: DAT: A
+DEBUG: INSTR 12: ==
+DEBUG: Scope if_scope ID 2 created
+DEBUG: SCOPEOPEN: 2
+DEBUG: DAT: Piirretaan_A
+DEBUG: INSTR 1: .
+DEBUG: INSTR 2: drop
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 3: pull
+DEBUG: DAT: 25
+DEBUG: INSTR 4: *
+DEBUG: INSTR 5: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 6: pull
+DEBUG: INSTR 7: +
+DEBUG: DAT: x0
+DEBUG: INSTR 8: push
+DEBUG: DAT: 0
+DEBUG: INSTR 9: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 10: pull
+DEBUG: INSTR 11: *
+DEBUG: DAT: y0
+DEBUG: INSTR 12: push
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 13: pull
+DEBUG: DAT: 0
+DEBUG: INSTR 14: +
+DEBUG: INSTR 15: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 16: pull
+DEBUG: INSTR 17: +
+DEBUG: DAT: x1
+DEBUG: INSTR 18: push
+DEBUG: DAT: 50
+DEBUG: INSTR 19: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 20: pull
+DEBUG: INSTR 21: *
+DEBUG: DAT: y1
+DEBUG: INSTR 22: push
+DEBUG: DAT: x0
+DEBUG: INSTR 23: pull
+DEBUG: INSTR 24: roll4-
+DEBUG: DAT: y0
+DEBUG: INSTR 25: pull
+DEBUG: INSTR 26: roll4-
+DEBUG: DAT: x1
+DEBUG: INSTR 27: pull
+DEBUG: INSTR 28: roll4-
+DEBUG: DAT: y1
+DEBUG: INSTR 29: pull
+DEBUG: INSTR 30: roll4-
+DEBUG: INSTR 31: line
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 32: pull
+DEBUG: DAT: 25
+DEBUG: INSTR 33: *
+DEBUG: INSTR 34: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 35: pull
+DEBUG: INSTR 36: +
+DEBUG: DAT: x0
+DEBUG: INSTR 37: push
+DEBUG: DAT: 0
+DEBUG: INSTR 38: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 39: pull
+DEBUG: INSTR 40: *
+DEBUG: DAT: y0
+DEBUG: INSTR 41: push
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 42: pull
+DEBUG: DAT: 50
+DEBUG: INSTR 43: *
+DEBUG: INSTR 44: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 45: pull
+DEBUG: INSTR 46: +
+DEBUG: DAT: x1
+DEBUG: INSTR 47: push
+DEBUG: DAT: 50
+DEBUG: INSTR 48: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 49: pull
+DEBUG: INSTR 50: *
+DEBUG: DAT: y1
+DEBUG: INSTR 51: push
+DEBUG: DAT: x0
+DEBUG: INSTR 52: pull
+DEBUG: INSTR 53: roll4-
+DEBUG: DAT: y0
+DEBUG: INSTR 54: pull
+DEBUG: INSTR 55: roll4-
+DEBUG: DAT: x1
+DEBUG: INSTR 56: pull
+DEBUG: INSTR 57: roll4-
+DEBUG: DAT: y1
+DEBUG: INSTR 58: pull
+DEBUG: INSTR 59: roll4-
+DEBUG: INSTR 60: line
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 61: pull
+DEBUG: DAT: 0
+DEBUG: INSTR 62: *
+DEBUG: INSTR 63: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 64: pull
+DEBUG: INSTR 65: +
+DEBUG: DAT: x0
+DEBUG: INSTR 66: push
+DEBUG: DAT: 25
+DEBUG: INSTR 67: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 68: pull
+DEBUG: INSTR 69: *
+DEBUG: DAT: y0
+DEBUG: INSTR 70: push
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 71: pull
+DEBUG: DAT: 50
+DEBUG: INSTR 72: *
+DEBUG: INSTR 73: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 74: pull
+DEBUG: INSTR 75: +
+DEBUG: DAT: x1
+DEBUG: INSTR 76: push
+DEBUG: DAT: 25
+DEBUG: INSTR 77: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 78: pull
+DEBUG: INSTR 79: *
+DEBUG: DAT: y1
+DEBUG: INSTR 80: push
+DEBUG: DAT: x0
+DEBUG: INSTR 81: pull
+DEBUG: INSTR 82: roll4-
+DEBUG: DAT: y0
+DEBUG: INSTR 83: pull
+DEBUG: INSTR 84: roll4-
+DEBUG: DAT: x1
+DEBUG: INSTR 85: pull
+DEBUG: INSTR 86: roll4-
+DEBUG: DAT: y1
+DEBUG: INSTR 87: pull
+DEBUG: INSTR 88: roll4-
+DEBUG: INSTR 89: line
+DEBUG: SCOPECLOSE: 2
+DEBUG: INSTR 14: tuck
+DEBUG: DAT: O
+DEBUG: INSTR 15: ==
+DEBUG: Scope if_scope ID 3 created
+DEBUG: SCOPEOPEN: 3
+DEBUG: DAT: Piirretaan_O
+DEBUG: INSTR 1: .
+DEBUG: INSTR 2: drop
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 3: pull
+DEBUG: DAT: 0
+DEBUG: INSTR 4: *
+DEBUG: INSTR 5: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 6: pull
+DEBUG: INSTR 7: +
+DEBUG: DAT: x0
+DEBUG: INSTR 8: push
+DEBUG: DAT: 0
+DEBUG: INSTR 9: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 10: pull
+DEBUG: INSTR 11: *
+DEBUG: DAT: y0
+DEBUG: INSTR 12: push
+DEBUG: DAT: 50
+DEBUG: INSTR 13: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 14: pull
+DEBUG: INSTR 15: *
+DEBUG: DAT: r
+DEBUG: INSTR 16: push
+DEBUG: DAT: x0
+DEBUG: INSTR 17: pull
+DEBUG: INSTR 18: rot-
+DEBUG: DAT: y0
+DEBUG: INSTR 19: pull
+DEBUG: INSTR 20: rot-
+DEBUG: DAT: r
+DEBUG: INSTR 21: pull
+DEBUG: INSTR 22: rot-
+DEBUG: INSTR 23: circle
+DEBUG: SCOPECLOSE: 3
+DEBUG: INSTR 17: tuck
+DEBUG: DAT: K
+DEBUG: INSTR 18: ==
+DEBUG: Scope if_scope ID 4 created
+DEBUG: SCOPEOPEN: 4
+DEBUG: DAT: Piirretaan_K
+DEBUG: INSTR 1: .
+DEBUG: INSTR 2: drop
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 3: pull
+DEBUG: DAT: 0
+DEBUG: INSTR 4: *
+DEBUG: INSTR 5: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 6: pull
+DEBUG: INSTR 7: +
+DEBUG: DAT: x0
+DEBUG: INSTR 8: push
+DEBUG: DAT: 0
+DEBUG: INSTR 9: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 10: pull
+DEBUG: INSTR 11: *
+DEBUG: DAT: y0
+DEBUG: INSTR 12: push
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 13: pull
+DEBUG: DAT: 0
+DEBUG: INSTR 14: *
+DEBUG: INSTR 15: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 16: pull
+DEBUG: INSTR 17: +
+DEBUG: DAT: x1
+DEBUG: INSTR 18: push
+DEBUG: DAT: 50
+DEBUG: INSTR 19: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 20: pull
+DEBUG: INSTR 21: *
+DEBUG: DAT: y1
+DEBUG: INSTR 22: push
+DEBUG: DAT: x0
+DEBUG: INSTR 23: pull
+DEBUG: INSTR 24: roll4-
+DEBUG: DAT: y0
+DEBUG: INSTR 25: pull
+DEBUG: INSTR 26: roll4-
+DEBUG: DAT: x1
+DEBUG: INSTR 27: pull
+DEBUG: INSTR 28: roll4-
+DEBUG: DAT: y1
+DEBUG: INSTR 29: pull
+DEBUG: INSTR 30: roll4-
+DEBUG: INSTR 31: line
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 32: pull
+DEBUG: DAT: 50
+DEBUG: INSTR 33: *
+DEBUG: INSTR 34: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 35: pull
+DEBUG: INSTR 36: +
+DEBUG: DAT: x0
+DEBUG: INSTR 37: push
+DEBUG: DAT: 0
+DEBUG: INSTR 38: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 39: pull
+DEBUG: INSTR 40: *
+DEBUG: DAT: y0
+DEBUG: INSTR 41: push
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 42: pull
+DEBUG: DAT: 0
+DEBUG: INSTR 43: *
+DEBUG: INSTR 44: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 45: pull
+DEBUG: INSTR 46: +
+DEBUG: DAT: x1
+DEBUG: INSTR 47: push
+DEBUG: DAT: 25
+DEBUG: INSTR 48: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 49: pull
+DEBUG: INSTR 50: *
+DEBUG: DAT: y1
+DEBUG: INSTR 51: push
+DEBUG: DAT: x0
+DEBUG: INSTR 52: pull
+DEBUG: INSTR 53: roll4-
+DEBUG: DAT: y0
+DEBUG: INSTR 54: pull
+DEBUG: INSTR 55: roll4-
+DEBUG: DAT: x1
+DEBUG: INSTR 56: pull
+DEBUG: INSTR 57: roll4-
+DEBUG: DAT: y1
+DEBUG: INSTR 58: pull
+DEBUG: INSTR 59: roll4-
+DEBUG: INSTR 60: line
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 61: pull
+DEBUG: DAT: 50
+DEBUG: INSTR 62: *
+DEBUG: INSTR 63: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 64: pull
+DEBUG: INSTR 65: +
+DEBUG: DAT: x0
+DEBUG: INSTR 66: push
+DEBUG: DAT: 50
+DEBUG: INSTR 67: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 68: pull
+DEBUG: INSTR 69: *
+DEBUG: DAT: y0
+DEBUG: INSTR 70: push
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 71: pull
+DEBUG: DAT: 0
+DEBUG: INSTR 72: *
+DEBUG: INSTR 73: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 74: pull
+DEBUG: INSTR 75: +
+DEBUG: DAT: x1
+DEBUG: INSTR 76: push
+DEBUG: DAT: 25
+DEBUG: INSTR 77: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 78: pull
+DEBUG: INSTR 79: *
+DEBUG: DAT: y1
+DEBUG: INSTR 80: push
+DEBUG: DAT: x0
+DEBUG: INSTR 81: pull
+DEBUG: INSTR 82: roll4-
+DEBUG: DAT: y0
+DEBUG: INSTR 83: pull
+DEBUG: INSTR 84: roll4-
+DEBUG: DAT: x1
+DEBUG: INSTR 85: pull
+DEBUG: INSTR 86: roll4-
+DEBUG: DAT: y1
+DEBUG: INSTR 87: pull
+DEBUG: INSTR 88: roll4-
+DEBUG: INSTR 89: line
+DEBUG: SCOPECLOSE: 4
+DEBUG: INSTR 20: tuck
+DEBUG: DAT: P
+DEBUG: INSTR 21: ==
+DEBUG: Scope if_scope ID 5 created
+DEBUG: SCOPEOPEN: 5
+DEBUG: DAT: Piirretaan_P
+DEBUG: INSTR 1: .
+DEBUG: INSTR 2: drop
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 3: pull
+DEBUG: DAT: 0
+DEBUG: INSTR 4: *
+DEBUG: INSTR 5: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 6: pull
+DEBUG: INSTR 7: +
+DEBUG: DAT: x0
+DEBUG: INSTR 8: push
+DEBUG: DAT: 0
+DEBUG: INSTR 9: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 10: pull
+DEBUG: INSTR 11: *
+DEBUG: DAT: y0
+DEBUG: INSTR 12: push
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 13: pull
+DEBUG: DAT: 0
+DEBUG: INSTR 14: *
+DEBUG: INSTR 15: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 16: pull
+DEBUG: INSTR 17: +
+DEBUG: DAT: x1
+DEBUG: INSTR 18: push
+DEBUG: DAT: 50
+DEBUG: INSTR 19: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 20: pull
+DEBUG: INSTR 21: *
+DEBUG: DAT: y1
+DEBUG: INSTR 22: push
+DEBUG: DAT: x0
+DEBUG: INSTR 23: pull
+DEBUG: INSTR 24: roll4-
+DEBUG: DAT: y0
+DEBUG: INSTR 25: pull
+DEBUG: INSTR 26: roll4-
+DEBUG: DAT: x1
+DEBUG: INSTR 27: pull
+DEBUG: INSTR 28: roll4-
+DEBUG: DAT: y1
+DEBUG: INSTR 29: pull
+DEBUG: INSTR 30: roll4-
+DEBUG: INSTR 31: line
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 32: pull
+DEBUG: DAT: 0
+DEBUG: INSTR 33: *
+DEBUG: INSTR 34: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 35: pull
+DEBUG: INSTR 36: +
+DEBUG: DAT: x0
+DEBUG: INSTR 37: push
+DEBUG: DAT: 0
+DEBUG: INSTR 38: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 39: pull
+DEBUG: INSTR 40: *
+DEBUG: DAT: y0
+DEBUG: INSTR 41: push
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 42: pull
+DEBUG: DAT: 50
+DEBUG: INSTR 43: *
+DEBUG: INSTR 44: swap
+DEBUG: DAT: POSITION
+DEBUG: INSTR 45: pull
+DEBUG: INSTR 46: +
+DEBUG: DAT: x1
+DEBUG: INSTR 47: push
+DEBUG: DAT: 25
+DEBUG: INSTR 48: swap
+DEBUG: DAT: SKAALA2
+DEBUG: INSTR 49: pull
+DEBUG: INSTR 50: *
+DEBUG: DAT: y1
+DEBUG: INSTR 51: push
+DEBUG: DAT: x0
+DEBUG: INSTR 52: pull
+DEBUG: INSTR 53: roll4-
+DEBUG: DAT: y0
+DEBUG: INSTR 54: pull
+DEBUG: INSTR 55: roll4-
+DEBUG: DAT: x1
+DEBUG: INSTR 56: pull
+DEBUG: INSTR 57: roll4-
+DEBUG: DAT: y1
+DEBUG: INSTR 58: pull
+DEBUG: INSTR 59: roll4-
+DEBUG: INSTR 60: rect
+DEBUG: SCOPECLOSE: 5
+DEBUG: DAT: Q
+DEBUG: INSTR 23: !=
+DEBUG: SCOPECLOSE: 1
+DEBUG: DAT: LOPETIT_OHJELMAN
+DEBUG: INSTR 15: .
+INFO: Tokens parsed
+INFO: Instructions: 15
+INFO: Data values: 8
+INFO: Starting interpreting...
+DEBUG: STACK: ['Anna_lukuarvo_valilta_1-200', '$', '100', 'SKAALA2', 'SKAALA', '-50', 'POSITION', 'LOPETIT_OHJELMAN']
+DEBUG: Interpreting instruction: gfxinit with arguments []
+GFX: Initialized Tkinter window
+DEBUG: STACK: ['Anna_lukuarvo_valilta_1-200', '$', '100', 'SKAALA2', 'SKAALA', '-50', 'POSITION', 'LOPETIT_OHJELMAN']
+DEBUG: Interpreting instruction: . with arguments ['Anna_lukuarvo_valilta_1-200']
+PRINT: Anna lukuarvo valilta 1-200
+DEBUG: STACK: ['Anna_lukuarvo_valilta_1-200', '$', '100', 'SKAALA2', 'SKAALA', '-50', 'POSITION', 'LOPETIT_OHJELMAN']
+DEBUG: Interpreting instruction: drop with arguments ['Anna_lukuarvo_valilta_1-200']
+DEBUG: STACK: ['$', '100', 'SKAALA2', 'SKAALA', '-50', 'POSITION', 'LOPETIT_OHJELMAN']
+DEBUG: Interpreting instruction: read with arguments []
+DEBUG: STACK: ['100', '100', 'SKAALA2', 'SKAALA', '-50', 'POSITION', 'LOPETIT_OHJELMAN']
+DEBUG: Interpreting instruction: dup with arguments ['100']
+DEBUG: Pushed result ['100', '100']
+DEBUG: STACK: ['100', '100', '100', 'SKAALA2', 'SKAALA', '-50', 'POSITION', 'LOPETIT_OHJELMAN']
+DEBUG: Interpreting instruction: rot- with arguments ['100', '100', '100']
+DEBUG: Pushed result ['100', '100', '100']
+DEBUG: STACK: ['100', '100', '100', 'SKAALA2', 'SKAALA', '-50', 'POSITION', 'LOPETIT_OHJELMAN']
+DEBUG: Interpreting instruction: / with arguments ['100', '100']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '100', 'SKAALA2', 'SKAALA', '-50', 'POSITION', 'LOPETIT_OHJELMAN']
+DEBUG: Interpreting instruction: rot- with arguments [1, '100', 'SKAALA2']
+DEBUG: Pushed result [1, 'SKAALA2', '100']
+DEBUG: STACK: ['100', 'SKAALA2', 1, 'SKAALA', '-50', 'POSITION', 'LOPETIT_OHJELMAN']
+DEBUG: Interpreting instruction: rot- with arguments ['100', 'SKAALA2', 1]
+DEBUG: Pushed result ['100', 1, 'SKAALA2']
+DEBUG: STACK: ['SKAALA2', 1, '100', 'SKAALA', '-50', 'POSITION', 'LOPETIT_OHJELMAN']
+DEBUG: Interpreting instruction: swap with arguments ['SKAALA2', 1]
+DEBUG: Pushed result ['SKAALA2', 1]
+DEBUG: STACK: [1, 'SKAALA2', '100', 'SKAALA', '-50', 'POSITION', 'LOPETIT_OHJELMAN']
+DEBUG: Interpreting instruction: push with arguments [1, 'SKAALA2']
+DEBUG: STACK: ['100', 'SKAALA', '-50', 'POSITION', 'LOPETIT_OHJELMAN']
+DEBUG: Interpreting instruction: push with arguments ['100', 'SKAALA']
+DEBUG: STACK: ['-50', 'POSITION', 'LOPETIT_OHJELMAN']
+DEBUG: Interpreting instruction: push with arguments ['-50', 'POSITION']
+DEBUG: Entering loop block loop_scope 1
+DEBUG: STACK: ['SKAALA2', '50', '5', 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '50', '5', 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: * with arguments [1, '50']
+DEBUG: Pushed result 50
+DEBUG: STACK: [50, '5', 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: + with arguments [50, '5']
+DEBUG: Pushed result 55
+DEBUG: STACK: [55, 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: swap with arguments [55, 'POSITION']
+DEBUG: Pushed result [55, 'POSITION']
+DEBUG: STACK: ['POSITION', 55, 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: pull with arguments ['POSITION']
+DEBUG: Pushed result -50
+DEBUG: STACK: ['-50', 55, 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: + with arguments ['-50', 55]
+DEBUG: Pushed result 5
+DEBUG: STACK: [5, 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: push with arguments [5, 'POSITION']
+DEBUG: STACK: ['Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: . with arguments ['Anna_kirjain_tai_lopeta']
+PRINT: Anna kirjain tai lopeta
+DEBUG: STACK: ['Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: drop with arguments ['Anna_kirjain_tai_lopeta']
+DEBUG: STACK: ['$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: read with arguments []
+DEBUG: STACK: ['A', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['A', 'A']
+DEBUG: Pushed result ['A', 'A', 'A']
+DEBUG: STACK: ['A', 'A', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['A', 'A']
+DEBUG: Pushed result True
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated True, proceeding to block if_scope 2
+DEBUG: STACK: ['Piirretaan_A', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: . with arguments ['Piirretaan_A']
+PRINT: Piirretaan A
+DEBUG: STACK: ['Piirretaan_A', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: drop with arguments ['Piirretaan_A']
+DEBUG: STACK: ['SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '25']
+DEBUG: Pushed result 25
+DEBUG: STACK: [25, 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments [25, 'POSITION']
+DEBUG: Pushed result [25, 'POSITION']
+DEBUG: STACK: ['POSITION', 25, 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['POSITION']
+DEBUG: Pushed result 5
+DEBUG: STACK: [5, 25, 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: + with arguments [5, 25]
+DEBUG: Pushed result 30
+DEBUG: STACK: [30, 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [30, 'x0']
+DEBUG: STACK: ['0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments ['0', 'SKAALA2']
+DEBUG: Pushed result ['0', 'SKAALA2']
+DEBUG: STACK: ['SKAALA2', '0', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '0', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '0']
+DEBUG: Pushed result 0
+DEBUG: STACK: [0, 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [0, 'y0']
+DEBUG: STACK: ['SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: + with arguments [1, '0']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments [1, 'POSITION']
+DEBUG: Pushed result [1, 'POSITION']
+DEBUG: STACK: ['POSITION', 1, 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['POSITION']
+DEBUG: Pushed result 5
+DEBUG: STACK: [5, 1, 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: + with arguments [5, 1]
+DEBUG: Pushed result 6
+DEBUG: STACK: [6, 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [6, 'x1']
+DEBUG: STACK: ['50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments ['50', 'SKAALA2']
+DEBUG: Pushed result ['50', 'SKAALA2']
+DEBUG: STACK: ['SKAALA2', '50', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '50', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '50']
+DEBUG: Pushed result 50
+DEBUG: STACK: [50, 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [50, 'y1']
+DEBUG: STACK: ['x0', 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['x0']
+DEBUG: Pushed result 30
+DEBUG: STACK: [30, 'y0', 'x1', 'y1', 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: roll4- with arguments [30, 'y0', 'x1', 'y1']
+DEBUG: Pushed result [30, 'y1', 'x1', 'y0']
+DEBUG: STACK: ['y0', 'x1', 'y1', 30, 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['y0']
+DEBUG: Pushed result 0
+DEBUG: STACK: [0, 'x1', 'y1', 30, 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: roll4- with arguments [0, 'x1', 'y1', 30]
+DEBUG: Pushed result [0, 30, 'y1', 'x1']
+DEBUG: STACK: ['x1', 'y1', 30, 0, 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['x1']
+DEBUG: Pushed result 6
+DEBUG: STACK: [6, 'y1', 30, 0, 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: roll4- with arguments [6, 'y1', 30, 0]
+DEBUG: Pushed result [6, 0, 30, 'y1']
+DEBUG: STACK: ['y1', 30, 0, 6, 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['y1']
+DEBUG: Pushed result 50
+DEBUG: STACK: [50, 30, 0, 6, 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: roll4- with arguments [50, 30, 0, 6]
+DEBUG: Pushed result [50, 6, 0, 30]
+DEBUG: STACK: [30, 0, 6, 50, 'SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: line with arguments [30, 0, 6, 50]
+DEBUG: STACK: ['SKAALA2', '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '25', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '25']
+DEBUG: Pushed result 25
+DEBUG: STACK: [25, 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments [25, 'POSITION']
+DEBUG: Pushed result [25, 'POSITION']
+DEBUG: STACK: ['POSITION', 25, 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['POSITION']
+DEBUG: Pushed result 5
+DEBUG: STACK: [5, 25, 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: + with arguments [5, 25]
+DEBUG: Pushed result 30
+DEBUG: STACK: [30, 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [30, 'x0']
+DEBUG: STACK: ['0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments ['0', 'SKAALA2']
+DEBUG: Pushed result ['0', 'SKAALA2']
+DEBUG: STACK: ['SKAALA2', '0', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '0', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '0']
+DEBUG: Pushed result 0
+DEBUG: STACK: [0, 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [0, 'y0']
+DEBUG: STACK: ['SKAALA2', '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '50', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '50']
+DEBUG: Pushed result 50
+DEBUG: STACK: [50, 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments [50, 'POSITION']
+DEBUG: Pushed result [50, 'POSITION']
+DEBUG: STACK: ['POSITION', 50, 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['POSITION']
+DEBUG: Pushed result 5
+DEBUG: STACK: [5, 50, 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: + with arguments [5, 50]
+DEBUG: Pushed result 55
+DEBUG: STACK: [55, 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [55, 'x1']
+DEBUG: STACK: ['50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments ['50', 'SKAALA2']
+DEBUG: Pushed result ['50', 'SKAALA2']
+DEBUG: STACK: ['SKAALA2', '50', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '50', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '50']
+DEBUG: Pushed result 50
+DEBUG: STACK: [50, 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [50, 'y1']
+DEBUG: STACK: ['x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['x0']
+DEBUG: Pushed result 30
+DEBUG: STACK: [30, 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: roll4- with arguments [30, 'y0', 'x1', 'y1']
+DEBUG: Pushed result [30, 'y1', 'x1', 'y0']
+DEBUG: STACK: ['y0', 'x1', 'y1', 30, 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['y0']
+DEBUG: Pushed result 0
+DEBUG: STACK: [0, 'x1', 'y1', 30, 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: roll4- with arguments [0, 'x1', 'y1', 30]
+DEBUG: Pushed result [0, 30, 'y1', 'x1']
+DEBUG: STACK: ['x1', 'y1', 30, 0, 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['x1']
+DEBUG: Pushed result 55
+DEBUG: STACK: [55, 'y1', 30, 0, 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: roll4- with arguments [55, 'y1', 30, 0]
+DEBUG: Pushed result [55, 0, 30, 'y1']
+DEBUG: STACK: ['y1', 30, 0, 55, 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['y1']
+DEBUG: Pushed result 50
+DEBUG: STACK: [50, 30, 0, 55, 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: roll4- with arguments [50, 30, 0, 55]
+DEBUG: Pushed result [50, 55, 0, 30]
+DEBUG: STACK: [30, 0, 55, 50, 'SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: line with arguments [30, 0, 55, 50]
+DEBUG: STACK: ['SKAALA2', '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '0', 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '0']
+DEBUG: Pushed result 0
+DEBUG: STACK: [0, 'POSITION', 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments [0, 'POSITION']
+DEBUG: Pushed result [0, 'POSITION']
+DEBUG: STACK: ['POSITION', 0, 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['POSITION']
+DEBUG: Pushed result 5
+DEBUG: STACK: [5, 0, 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: + with arguments [5, 0]
+DEBUG: Pushed result 5
+DEBUG: STACK: [5, 'x0', '25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [5, 'x0']
+DEBUG: STACK: ['25', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments ['25', 'SKAALA2']
+DEBUG: Pushed result ['25', 'SKAALA2']
+DEBUG: STACK: ['SKAALA2', '25', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '25', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '25']
+DEBUG: Pushed result 25
+DEBUG: STACK: [25, 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [25, 'y0']
+DEBUG: STACK: ['SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '50']
+DEBUG: Pushed result 50
+DEBUG: STACK: [50, 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments [50, 'POSITION']
+DEBUG: Pushed result [50, 'POSITION']
+DEBUG: STACK: ['POSITION', 50, 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['POSITION']
+DEBUG: Pushed result 5
+DEBUG: STACK: [5, 50, 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: + with arguments [5, 50]
+DEBUG: Pushed result 55
+DEBUG: STACK: [55, 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [55, 'x1']
+DEBUG: STACK: ['25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments ['25', 'SKAALA2']
+DEBUG: Pushed result ['25', 'SKAALA2']
+DEBUG: STACK: ['SKAALA2', '25', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '25', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '25']
+DEBUG: Pushed result 25
+DEBUG: STACK: [25, 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [25, 'y1']
+DEBUG: STACK: ['x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['x0']
+DEBUG: Pushed result 5
+DEBUG: STACK: [5, 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: roll4- with arguments [5, 'y0', 'x1', 'y1']
+DEBUG: Pushed result [5, 'y1', 'x1', 'y0']
+DEBUG: STACK: ['y0', 'x1', 'y1', 5]
+DEBUG: Interpreting instruction: pull with arguments ['y0']
+DEBUG: Pushed result 25
+DEBUG: STACK: [25, 'x1', 'y1', 5]
+DEBUG: Interpreting instruction: roll4- with arguments [25, 'x1', 'y1', 5]
+DEBUG: Pushed result [25, 5, 'y1', 'x1']
+DEBUG: STACK: ['x1', 'y1', 5, 25]
+DEBUG: Interpreting instruction: pull with arguments ['x1']
+DEBUG: Pushed result 55
+DEBUG: STACK: [55, 'y1', 5, 25]
+DEBUG: Interpreting instruction: roll4- with arguments [55, 'y1', 5, 25]
+DEBUG: Pushed result [55, 25, 5, 'y1']
+DEBUG: STACK: ['y1', 5, 25, 55]
+DEBUG: Interpreting instruction: pull with arguments ['y1']
+DEBUG: Pushed result 25
+DEBUG: STACK: [25, 5, 25, 55]
+DEBUG: Interpreting instruction: roll4- with arguments [25, 5, 25, 55]
+DEBUG: Pushed result [25, 55, 25, 5]
+DEBUG: STACK: [5, 25, 55, 25]
+DEBUG: Interpreting instruction: line with arguments [5, 25, 55, 25]
+DEBUG: Leaving scope if_scope 2
+DEBUG: STACK: ['A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['A', 'O']
+DEBUG: Pushed result ['A', 'O', 'A']
+DEBUG: STACK: ['A', 'O', 'A', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['A', 'O']
+DEBUG: Pushed result False
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated False, not proceeding to block
+DEBUG: STACK: ['A', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['A', 'K']
+DEBUG: Pushed result ['A', 'K', 'A']
+DEBUG: STACK: ['A', 'K', 'A', 'P', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['A', 'K']
+DEBUG: Pushed result False
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated False, not proceeding to block
+DEBUG: STACK: ['A', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['A', 'P']
+DEBUG: Pushed result ['A', 'P', 'A']
+DEBUG: STACK: ['A', 'P', 'A', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['A', 'P']
+DEBUG: Pushed result False
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated False, not proceeding to block
+DEBUG: STACK: ['A', 'Q']
+DEBUG: Interpreting instruction: != with arguments ['A', 'Q']
+DEBUG: Pushed result True
+DEBUG: Leaving scope loop_scope 1
+DEBUG: Looping block loop_scope 1
+DEBUG: STACK: ['SKAALA2', '50', '5', 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '50', '5', 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: * with arguments [1, '50']
+DEBUG: Pushed result 50
+DEBUG: STACK: [50, '5', 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: + with arguments [50, '5']
+DEBUG: Pushed result 55
+DEBUG: STACK: [55, 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: swap with arguments [55, 'POSITION']
+DEBUG: Pushed result [55, 'POSITION']
+DEBUG: STACK: ['POSITION', 55, 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: pull with arguments ['POSITION']
+DEBUG: Pushed result 5
+DEBUG: STACK: [5, 55, 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: + with arguments [5, 55]
+DEBUG: Pushed result 60
+DEBUG: STACK: [60, 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: push with arguments [60, 'POSITION']
+DEBUG: STACK: ['Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: . with arguments ['Anna_kirjain_tai_lopeta']
+PRINT: Anna kirjain tai lopeta
+DEBUG: STACK: ['Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: drop with arguments ['Anna_kirjain_tai_lopeta']
+DEBUG: STACK: ['$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: read with arguments []
+DEBUG: STACK: ['O', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['O', 'A']
+DEBUG: Pushed result ['O', 'A', 'O']
+DEBUG: STACK: ['O', 'A', 'O', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['O', 'A']
+DEBUG: Pushed result False
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated False, not proceeding to block
+DEBUG: STACK: ['O', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['O', 'O']
+DEBUG: Pushed result ['O', 'O', 'O']
+DEBUG: STACK: ['O', 'O', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['O', 'O']
+DEBUG: Pushed result True
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated True, proceeding to block if_scope 3
+DEBUG: STACK: ['Piirretaan_O', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', '50', 'SKAALA2', 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: . with arguments ['Piirretaan_O']
+PRINT: Piirretaan O
+DEBUG: STACK: ['Piirretaan_O', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', '50', 'SKAALA2', 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: drop with arguments ['Piirretaan_O']
+DEBUG: STACK: ['SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', '50', 'SKAALA2', 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', '50', 'SKAALA2', 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: * with arguments [1, '0']
+DEBUG: Pushed result 0
+DEBUG: STACK: [0, 'POSITION', 'x0', '0', 'SKAALA2', 'y0', '50', 'SKAALA2', 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: swap with arguments [0, 'POSITION']
+DEBUG: Pushed result [0, 'POSITION']
+DEBUG: STACK: ['POSITION', 0, 'x0', '0', 'SKAALA2', 'y0', '50', 'SKAALA2', 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: pull with arguments ['POSITION']
+DEBUG: Pushed result 60
+DEBUG: STACK: [60, 0, 'x0', '0', 'SKAALA2', 'y0', '50', 'SKAALA2', 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: + with arguments [60, 0]
+DEBUG: Pushed result 60
+DEBUG: STACK: [60, 'x0', '0', 'SKAALA2', 'y0', '50', 'SKAALA2', 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: push with arguments [60, 'x0']
+DEBUG: STACK: ['0', 'SKAALA2', 'y0', '50', 'SKAALA2', 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: swap with arguments ['0', 'SKAALA2']
+DEBUG: Pushed result ['0', 'SKAALA2']
+DEBUG: STACK: ['SKAALA2', '0', 'y0', '50', 'SKAALA2', 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '0', 'y0', '50', 'SKAALA2', 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: * with arguments [1, '0']
+DEBUG: Pushed result 0
+DEBUG: STACK: [0, 'y0', '50', 'SKAALA2', 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: push with arguments [0, 'y0']
+DEBUG: STACK: ['50', 'SKAALA2', 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: swap with arguments ['50', 'SKAALA2']
+DEBUG: Pushed result ['50', 'SKAALA2']
+DEBUG: STACK: ['SKAALA2', '50', 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '50', 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: * with arguments [1, '50']
+DEBUG: Pushed result 50
+DEBUG: STACK: [50, 'r', 'x0', 'y0', 'r']
+DEBUG: Interpreting instruction: push with arguments [50, 'r']
+DEBUG: STACK: ['x0', 'y0', 'r']
+DEBUG: Interpreting instruction: pull with arguments ['x0']
+DEBUG: Pushed result 60
+DEBUG: STACK: [60, 'y0', 'r']
+DEBUG: Interpreting instruction: rot- with arguments [60, 'y0', 'r']
+DEBUG: Pushed result [60, 'r', 'y0']
+DEBUG: STACK: ['y0', 'r', 60]
+DEBUG: Interpreting instruction: pull with arguments ['y0']
+DEBUG: Pushed result 0
+DEBUG: STACK: [0, 'r', 60]
+DEBUG: Interpreting instruction: rot- with arguments [0, 'r', 60]
+DEBUG: Pushed result [0, 60, 'r']
+DEBUG: STACK: ['r', 60, 0]
+DEBUG: Interpreting instruction: pull with arguments ['r']
+DEBUG: Pushed result 50
+DEBUG: STACK: [50, 60, 0]
+DEBUG: Interpreting instruction: rot- with arguments [50, 60, 0]
+DEBUG: Pushed result [50, 0, 60]
+DEBUG: STACK: [60, 0, 50]
+DEBUG: Interpreting instruction: circle with arguments [60, 0, 50]
+DEBUG: Leaving scope if_scope 3
+DEBUG: STACK: ['O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['O', 'K']
+DEBUG: Pushed result ['O', 'K', 'O']
+DEBUG: STACK: ['O', 'K', 'O', 'P', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['O', 'K']
+DEBUG: Pushed result False
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated False, not proceeding to block
+DEBUG: STACK: ['O', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['O', 'P']
+DEBUG: Pushed result ['O', 'P', 'O']
+DEBUG: STACK: ['O', 'P', 'O', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['O', 'P']
+DEBUG: Pushed result False
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated False, not proceeding to block
+DEBUG: STACK: ['O', 'Q']
+DEBUG: Interpreting instruction: != with arguments ['O', 'Q']
+DEBUG: Pushed result True
+DEBUG: Leaving scope loop_scope 1
+DEBUG: Looping block loop_scope 1
+DEBUG: STACK: ['SKAALA2', '50', '5', 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '50', '5', 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: * with arguments [1, '50']
+DEBUG: Pushed result 50
+DEBUG: STACK: [50, '5', 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: + with arguments [50, '5']
+DEBUG: Pushed result 55
+DEBUG: STACK: [55, 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: swap with arguments [55, 'POSITION']
+DEBUG: Pushed result [55, 'POSITION']
+DEBUG: STACK: ['POSITION', 55, 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: pull with arguments ['POSITION']
+DEBUG: Pushed result 60
+DEBUG: STACK: [60, 55, 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: + with arguments [60, 55]
+DEBUG: Pushed result 115
+DEBUG: STACK: [115, 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: push with arguments [115, 'POSITION']
+DEBUG: STACK: ['Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: . with arguments ['Anna_kirjain_tai_lopeta']
+PRINT: Anna kirjain tai lopeta
+DEBUG: STACK: ['Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: drop with arguments ['Anna_kirjain_tai_lopeta']
+DEBUG: STACK: ['$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: read with arguments []
+DEBUG: STACK: ['P', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['P', 'A']
+DEBUG: Pushed result ['P', 'A', 'P']
+DEBUG: STACK: ['P', 'A', 'P', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['P', 'A']
+DEBUG: Pushed result False
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated False, not proceeding to block
+DEBUG: STACK: ['P', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['P', 'O']
+DEBUG: Pushed result ['P', 'O', 'P']
+DEBUG: STACK: ['P', 'O', 'P', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['P', 'O']
+DEBUG: Pushed result False
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated False, not proceeding to block
+DEBUG: STACK: ['P', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['P', 'K']
+DEBUG: Pushed result ['P', 'K', 'P']
+DEBUG: STACK: ['P', 'K', 'P', 'P', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['P', 'K']
+DEBUG: Pushed result False
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated False, not proceeding to block
+DEBUG: STACK: ['P', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['P', 'P']
+DEBUG: Pushed result ['P', 'P', 'P']
+DEBUG: STACK: ['P', 'P', 'P', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['P', 'P']
+DEBUG: Pushed result True
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated True, proceeding to block if_scope 5
+DEBUG: STACK: ['Piirretaan_P', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: . with arguments ['Piirretaan_P']
+PRINT: Piirretaan P
+DEBUG: STACK: ['Piirretaan_P', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: drop with arguments ['Piirretaan_P']
+DEBUG: STACK: ['SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '0']
+DEBUG: Pushed result 0
+DEBUG: STACK: [0, 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments [0, 'POSITION']
+DEBUG: Pushed result [0, 'POSITION']
+DEBUG: STACK: ['POSITION', 0, 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['POSITION']
+DEBUG: Pushed result 115
+DEBUG: STACK: [115, 0, 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: + with arguments [115, 0]
+DEBUG: Pushed result 115
+DEBUG: STACK: [115, 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [115, 'x0']
+DEBUG: STACK: ['0', 'SKAALA2', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments ['0', 'SKAALA2']
+DEBUG: Pushed result ['0', 'SKAALA2']
+DEBUG: STACK: ['SKAALA2', '0', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '0', 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '0']
+DEBUG: Pushed result 0
+DEBUG: STACK: [0, 'y0', 'SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [0, 'y0']
+DEBUG: STACK: ['SKAALA2', '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '0', 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '0']
+DEBUG: Pushed result 0
+DEBUG: STACK: [0, 'POSITION', 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments [0, 'POSITION']
+DEBUG: Pushed result [0, 'POSITION']
+DEBUG: STACK: ['POSITION', 0, 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['POSITION']
+DEBUG: Pushed result 115
+DEBUG: STACK: [115, 0, 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: + with arguments [115, 0]
+DEBUG: Pushed result 115
+DEBUG: STACK: [115, 'x1', '50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [115, 'x1']
+DEBUG: STACK: ['50', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments ['50', 'SKAALA2']
+DEBUG: Pushed result ['50', 'SKAALA2']
+DEBUG: STACK: ['SKAALA2', '50', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '50', 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '50']
+DEBUG: Pushed result 50
+DEBUG: STACK: [50, 'y1', 'x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [50, 'y1']
+DEBUG: STACK: ['x0', 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['x0']
+DEBUG: Pushed result 115
+DEBUG: STACK: [115, 'y0', 'x1', 'y1', 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: roll4- with arguments [115, 'y0', 'x1', 'y1']
+DEBUG: Pushed result [115, 'y1', 'x1', 'y0']
+DEBUG: STACK: ['y0', 'x1', 'y1', 115, 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['y0']
+DEBUG: Pushed result 0
+DEBUG: STACK: [0, 'x1', 'y1', 115, 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: roll4- with arguments [0, 'x1', 'y1', 115]
+DEBUG: Pushed result [0, 115, 'y1', 'x1']
+DEBUG: STACK: ['x1', 'y1', 115, 0, 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['x1']
+DEBUG: Pushed result 115
+DEBUG: STACK: [115, 'y1', 115, 0, 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: roll4- with arguments [115, 'y1', 115, 0]
+DEBUG: Pushed result [115, 0, 115, 'y1']
+DEBUG: STACK: ['y1', 115, 0, 115, 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['y1']
+DEBUG: Pushed result 50
+DEBUG: STACK: [50, 115, 0, 115, 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: roll4- with arguments [50, 115, 0, 115]
+DEBUG: Pushed result [50, 115, 0, 115]
+DEBUG: STACK: [115, 0, 115, 50, 'SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: line with arguments [115, 0, 115, 50]
+DEBUG: STACK: ['SKAALA2', '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '0', 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '0']
+DEBUG: Pushed result 0
+DEBUG: STACK: [0, 'POSITION', 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments [0, 'POSITION']
+DEBUG: Pushed result [0, 'POSITION']
+DEBUG: STACK: ['POSITION', 0, 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['POSITION']
+DEBUG: Pushed result 115
+DEBUG: STACK: [115, 0, 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: + with arguments [115, 0]
+DEBUG: Pushed result 115
+DEBUG: STACK: [115, 'x0', '0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [115, 'x0']
+DEBUG: STACK: ['0', 'SKAALA2', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments ['0', 'SKAALA2']
+DEBUG: Pushed result ['0', 'SKAALA2']
+DEBUG: STACK: ['SKAALA2', '0', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '0', 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '0']
+DEBUG: Pushed result 0
+DEBUG: STACK: [0, 'y0', 'SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [0, 'y0']
+DEBUG: STACK: ['SKAALA2', '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '50', 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '50']
+DEBUG: Pushed result 50
+DEBUG: STACK: [50, 'POSITION', 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments [50, 'POSITION']
+DEBUG: Pushed result [50, 'POSITION']
+DEBUG: STACK: ['POSITION', 50, 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['POSITION']
+DEBUG: Pushed result 115
+DEBUG: STACK: [115, 50, 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: + with arguments [115, 50]
+DEBUG: Pushed result 165
+DEBUG: STACK: [165, 'x1', '25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [165, 'x1']
+DEBUG: STACK: ['25', 'SKAALA2', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: swap with arguments ['25', 'SKAALA2']
+DEBUG: Pushed result ['25', 'SKAALA2']
+DEBUG: STACK: ['SKAALA2', '25', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '25', 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: * with arguments [1, '25']
+DEBUG: Pushed result 25
+DEBUG: STACK: [25, 'y1', 'x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: push with arguments [25, 'y1']
+DEBUG: STACK: ['x0', 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: pull with arguments ['x0']
+DEBUG: Pushed result 115
+DEBUG: STACK: [115, 'y0', 'x1', 'y1']
+DEBUG: Interpreting instruction: roll4- with arguments [115, 'y0', 'x1', 'y1']
+DEBUG: Pushed result [115, 'y1', 'x1', 'y0']
+DEBUG: STACK: ['y0', 'x1', 'y1', 115]
+DEBUG: Interpreting instruction: pull with arguments ['y0']
+DEBUG: Pushed result 0
+DEBUG: STACK: [0, 'x1', 'y1', 115]
+DEBUG: Interpreting instruction: roll4- with arguments [0, 'x1', 'y1', 115]
+DEBUG: Pushed result [0, 115, 'y1', 'x1']
+DEBUG: STACK: ['x1', 'y1', 115, 0]
+DEBUG: Interpreting instruction: pull with arguments ['x1']
+DEBUG: Pushed result 165
+DEBUG: STACK: [165, 'y1', 115, 0]
+DEBUG: Interpreting instruction: roll4- with arguments [165, 'y1', 115, 0]
+DEBUG: Pushed result [165, 0, 115, 'y1']
+DEBUG: STACK: ['y1', 115, 0, 165]
+DEBUG: Interpreting instruction: pull with arguments ['y1']
+DEBUG: Pushed result 25
+DEBUG: STACK: [25, 115, 0, 165]
+DEBUG: Interpreting instruction: roll4- with arguments [25, 115, 0, 165]
+DEBUG: Pushed result [25, 165, 0, 115]
+DEBUG: STACK: [115, 0, 165, 25]
+DEBUG: Interpreting instruction: rect with arguments [115, 0, 165, 25]
+DEBUG: Leaving scope if_scope 5
+DEBUG: STACK: ['P', 'Q']
+DEBUG: Interpreting instruction: != with arguments ['P', 'Q']
+DEBUG: Pushed result True
+DEBUG: Leaving scope loop_scope 1
+DEBUG: Looping block loop_scope 1
+DEBUG: STACK: ['SKAALA2', '50', '5', 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: pull with arguments ['SKAALA2']
+DEBUG: Pushed result 1
+DEBUG: STACK: [1, '50', '5', 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: * with arguments [1, '50']
+DEBUG: Pushed result 50
+DEBUG: STACK: [50, '5', 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: + with arguments [50, '5']
+DEBUG: Pushed result 55
+DEBUG: STACK: [55, 'POSITION', 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: swap with arguments [55, 'POSITION']
+DEBUG: Pushed result [55, 'POSITION']
+DEBUG: STACK: ['POSITION', 55, 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: pull with arguments ['POSITION']
+DEBUG: Pushed result 115
+DEBUG: STACK: [115, 55, 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: + with arguments [115, 55]
+DEBUG: Pushed result 170
+DEBUG: STACK: [170, 'POSITION', 'Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: push with arguments [170, 'POSITION']
+DEBUG: STACK: ['Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: . with arguments ['Anna_kirjain_tai_lopeta']
+PRINT: Anna kirjain tai lopeta
+DEBUG: STACK: ['Anna_kirjain_tai_lopeta', '$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: drop with arguments ['Anna_kirjain_tai_lopeta']
+DEBUG: STACK: ['$', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: read with arguments []
+DEBUG: STACK: ['Q', 'A', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['Q', 'A']
+DEBUG: Pushed result ['Q', 'A', 'Q']
+DEBUG: STACK: ['Q', 'A', 'Q', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['Q', 'A']
+DEBUG: Pushed result False
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated False, not proceeding to block
+DEBUG: STACK: ['Q', 'O', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['Q', 'O']
+DEBUG: Pushed result ['Q', 'O', 'Q']
+DEBUG: STACK: ['Q', 'O', 'Q', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['Q', 'O']
+DEBUG: Pushed result False
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated False, not proceeding to block
+DEBUG: STACK: ['Q', 'K', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['Q', 'K']
+DEBUG: Pushed result ['Q', 'K', 'Q']
+DEBUG: STACK: ['Q', 'K', 'Q', 'P', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['Q', 'K']
+DEBUG: Pushed result False
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated False, not proceeding to block
+DEBUG: STACK: ['Q', 'P', 'Q']
+DEBUG: Interpreting instruction: tuck with arguments ['Q', 'P']
+DEBUG: Pushed result ['Q', 'P', 'Q']
+DEBUG: STACK: ['Q', 'P', 'Q', 'Q']
+DEBUG: Interpreting instruction: == with arguments ['Q', 'P']
+DEBUG: Pushed result False
+DEBUG: Interpreting control instruction IF
+DEBUG: Evaluated False, not proceeding to block
+DEBUG: STACK: ['Q', 'Q']
+DEBUG: Interpreting instruction: != with arguments ['Q', 'Q']
+DEBUG: Pushed result False
+DEBUG: Exiting loop block loop_scope 1
+DEBUG: STACK: ['LOPETIT_OHJELMAN']
+DEBUG: Interpreting instruction: . with arguments ['LOPETIT_OHJELMAN']
+PRINT: LOPETIT OHJELMAN
+INFO: OK
+DEBUG: Shutting down logger

@@ -5,7 +5,6 @@ from common import constants
 def readfile(rootdir, filepath):
     lines = []
     fullfilepath = rootdir + '/' + filepath
-    print(fullfilepath)
     with open(fullfilepath) as file:
         for l in file:
             l = l.strip()  # strip whitespace

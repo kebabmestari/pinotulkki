@@ -51,6 +51,10 @@ class GFX_Window(threading.Thread):
     def set_color(self, color):
         self.color = color
 
+    def exit(self):
+        self.root.destroy()
+
+
 
 def init_handler():
     global _gfx
@@ -92,3 +96,11 @@ def color_handler(color):
 # Convert arguments to integers
 def convert_arguments(*args):
     return [int(i) for i in args]
+
+
+# Quit TKinter
+def close_gfx():
+    if _gfx == None:
+        return
+    logger.log_debug('Closing TKinter')
+    _gfx.push_event(_gfx.exit)
