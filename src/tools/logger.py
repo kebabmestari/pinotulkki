@@ -4,8 +4,8 @@
 
 import logging
 import os
-
 from datetime import datetime
+
 from common import constants
 
 LOG_DIR = 'logs'
@@ -45,10 +45,12 @@ def log_info(msg):
 
 def log_error(msg):
     LOG.error('ERROR: ' + msg)
+    print('ERROR: ' + msg)
 
 
 def log_result(value):
-    LOG.info('RESULT: ' + str(value))
+    LOG.debug('RESULT: ' + str(value))
+    print('PRINT: ' + str(value))
 
 
 def log_print(value):

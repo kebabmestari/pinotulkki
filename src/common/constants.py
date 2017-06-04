@@ -13,4 +13,5 @@ class BlockType:
     LOOP = 2
     GLOBAL = 3
 
+
 DEBUG = True

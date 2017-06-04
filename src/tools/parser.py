@@ -1,9 +1,9 @@
-from tools import logger
-from tools import converter
 from common import constants
 from common.constants import BlockType
 from runtime import scopeservice
 from runtime.interpreter import get_instruction_words
+from tools import converter
+from tools import logger
 
 INSTRUCTIONS = get_instruction_words()
 
@@ -18,7 +18,6 @@ def break_lines(lines, delimiter=constants.DEFAULT_DELIMITER):
 
 
 def parse_tokens(tokens, start_scope):
-
     target_scope = scopeservice.get_scope(start_scope['id'])  # get global scope
     instr = scopeservice.get_instr_stack(start_scope['id'])
     data = scopeservice.get_data_stack(start_scope['id'])
@@ -41,7 +40,8 @@ def parse_tokens(tokens, start_scope):
             # get scope type values
             block_type = BlockType.IF if token == constants.IF_BLOCK_SYMBOLS[0] else BlockType.LOOP
             block_name = 'if' if block_type == BlockType.IF else 'loop'
-            block_symbol = constants.IF_BLOCK_SYMBOLS[0] if block_type == BlockType.IF else constants.LOOP_BLOCK_SYMBOLS[0]
+            block_symbol = constants.IF_BLOCK_SYMBOLS[0] if block_type == BlockType.IF else \
+            constants.LOOP_BLOCK_SYMBOLS[0]
             # symbol begins a new block
             block_open_count += 1
             # create new local scope

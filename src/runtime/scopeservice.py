@@ -1,7 +1,5 @@
 # list to hold lists each of which represents
 # a sub instruction
-from copy import copy
-
 import copy
 
 from common.inversestack import InverseStack

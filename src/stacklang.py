@@ -19,7 +19,7 @@ from tools import logger
 from tools import parser
 from tools import reader
 
-DEFAULT_FILE = 'test.txt'
+DEFAULT_FILE = 'laskuja.txt'
 PROGRAM_NAME = 'PINOTULKKI'
 
 _file_rows = []  # input file lines
@@ -40,7 +40,7 @@ def main(args):
     input_file = ''
 
     if len(args) == 0:
-        logger.log_info('No input file given, defaulting')
+        logger.log_info('No input file given, defaulting to ' + DEFAULT_FILE)
         input_file = DEFAULT_FILE
     else:
         input_file = args[0]

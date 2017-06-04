@@ -1,5 +1,5 @@
 def convert_token(token):
-    if token.isdigit():
+    if isinstance(token, int):
         token = int(token)
     else:
         token = str(token)

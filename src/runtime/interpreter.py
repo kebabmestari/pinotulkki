@@ -59,6 +59,7 @@ CMD = {
     'gfxinit': graphics.init_handler,
     'circle': graphics.circle_handler,
     'box': graphics.box_handler,
+    'rect': graphics.rect_handler,
     'line': graphics.line_handler,
     'triangle': graphics.triangle_handler,
     'color': graphics.color_handler,

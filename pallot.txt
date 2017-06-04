@@ -1,0 +1,24 @@
+# Ohjelma kysyy kayttajalta x ja y-koordinaatit ja piirtaa pallon
+gfxinit
+
+# Vaihda vari
+blue color
+
+# Paalooppi
+(
+Anna_x_koordinaatti: . drop
+read
+
+swap
+
+Anna_y_koordinaatti: . drop
+read
+
+# Pallon halkaisija
+50
+
+circle
+
+# Loopeti loop
+True
+)

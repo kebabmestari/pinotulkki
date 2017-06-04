@@ -1,0 +1,21 @@
+Lasketaan_1+5_ja_tulostetaan . drop
+
+1 + 5 . drop
+
+Lasketaan_10*2_ja_tulostetaan . drop
+
+10 * 2 . drop
+
+Lasketaan_(100_/_10)_+_5_*_9_ja_tulostetaan . drop
+
+100 10 / 5 9 rot- * + . drop
+
+Anna_luku: . drop
+read
+
+> 10
+{
+Luku_on_suurempi_kuin_kymmenen .
+}
+
+Loppu . drop
