@@ -167,6 +167,9 @@ def handle_command(cmd, data):
         except ValueError:
             logger.log_error('Invalid types of arguments')
             return False
+        except Exception as e:
+            logger.log_error(str(e))
+            return False
 
         if cmd in constants.PLACEHOLDER_FUNCTIONS:
             if isinstance(result, str):

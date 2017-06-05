@@ -20,7 +20,7 @@ from tools import logger
 from tools import parser
 from tools import reader
 
-DEFAULT_FILE = 'laskuja.txt'
+DEFAULT_FILE = 'demo.txt'
 PROGRAM_NAME = 'PINOTULKKI'
 
 _file_rows = []  # input file lines
